@@ -1,19 +1,57 @@
 # Vdlp.RedirectConditions.UserAgent (extension)
 
-This is an extension plugin for the Redirect plugin for OctoberCMS.
+This is an extension plugin for the [Redirect](https://octobercms.com/plugin/vdlp-redirect) plugin for OctoberCMS.
+
+## Requirements
+
+- Plugin `Vdlp.Redirect`
+- Plugin `Vdlp.RedirectConditions`
 
 ## Conditions
 
 ### `CrawlerCondition`
 
+On a positive match the redirect will take place if the request came from a Crawler.
+
 ### `DeviceCondition`
+
+On a positive match the redirect will take place if the request came from a specific device.
+
+Available device types to choose from:
+
+* Smartphone
+* Tablet
+* Desktop
 
 ### `OperationSystemCondition`
 
-## Requirements
+On a positive match the redirect will take place if the request came from a specific operating system.
 
-- Plugin Vdlp.Redirect
-- Plugin Vdlp.RedirectConditions
+Available operation system families to choose from:
+
+* Android
+* AmigaOS
+* Apple TV
+* BlackBerry
+* Brew
+* BeOS
+* Chrome OS
+* Firefox OS
+* Gaming Console
+* Google TV
+* IBM
+* iOS
+* RISC OS
+* GNU/Linux
+* Mac
+* Mobile Gaming Console
+* Real-time OS
+* Other Mobile
+* Symbian
+* Unix
+* WebTV
+* Windows
+* Windows Mobile
 
 ## Unit tests
 
