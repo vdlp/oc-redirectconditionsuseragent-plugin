@@ -1,0 +1,7 @@
+.idea/*
+.git/*
+./build/*
+.gitignore
+build.sh
+build-exclude.txt
+composer.lock

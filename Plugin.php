@@ -33,11 +33,11 @@ class Plugin extends PluginBase
     public function pluginDetails(): array
     {
         return [
-            'name' => 'Redirect Condition Extension: UserAgent',
+            'name' => 'Redirect Conditions: UserAgent',
             'description' => 'Adds UserAgent specific conditions to the Redirect plugin.',
-            'author' => 'Van der Let & Partners',
+            'author' => 'Van der Let & Partners <octobercms@vdlp.nl>',
             'icon' => 'icon-link',
-            'homepage' => 'https://octobercms.com/plugin/vdlp-redirect',
+            'homepage' => 'https://octobercms.com/plugin/vdlp-redirectconditionsuseragent',
         ];
     }
 
