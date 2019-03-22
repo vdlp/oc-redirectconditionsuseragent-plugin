@@ -60,3 +60,7 @@ To run the Unit Tests of this plugin, execute the following command from the pro
 ```
 vendor/bin/phpunit plugins/vdlp/redirectconditionsuseragent
 ```
+
+## Questions? Need help?
+
+If you have any question about how to use this plugin, please don't hesitate to contact us at octobercms@vdlp.nl. We're happy to help you. You can also visit the support forum and drop your questions/issues there.
