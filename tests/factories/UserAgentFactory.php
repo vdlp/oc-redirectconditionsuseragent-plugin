@@ -4,34 +4,20 @@ declare(strict_types=1);
 
 namespace Vdlp\RedirectConditionsUserAgent\Tests\Factories;
 
-/**
- * Class UserAgentFactory
- *
- * @package Vdlp\RedirectConditions\Tests\Factories
- */
 class UserAgentFactory
 {
-    /**
-     * @return string
-     */
     public static function getSmartPhone(): string
     {
         return 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) '
             . 'AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202';
     }
 
-    /**
-     * @return string
-     */
     public static function getTablet(): string
     {
         return 'Mozilla/5.0 (iPad; CPU OS 11_4_1 like Mac OS X) '
             . 'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.0 Mobile/15E148 Safari/604.1';
     }
 
-    /**
-     * @return string
-     */
     public static function getDesktop(): string
     {
         return 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) '

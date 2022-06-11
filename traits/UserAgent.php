@@ -4,23 +4,11 @@ declare(strict_types=1);
 
 namespace Vdlp\RedirectConditionsUserAgent\Traits;
 
-/**
- * Class UserAgent
- *
- * @package Vdlp\RedirectConditionsUserAgent\Traits
- */
 trait UserAgent
 {
-    /**
-     * @var string|null
-     */
-    protected $userAgent;
+    protected ?string $userAgent;
 
-    /**
-     * @param string $userAgent
-     * @return void
-     */
-    public function setUserAgent(string $userAgent)
+    public function setUserAgent(?string $userAgent): void
     {
         $this->userAgent = $userAgent;
     }

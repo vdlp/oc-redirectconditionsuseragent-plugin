@@ -10,16 +10,8 @@ use Vdlp\RedirectConditions\Tests\Factories\RedirectRuleFactory;
 use Vdlp\RedirectConditionsUserAgent\Classes\DeviceCondition;
 use Vdlp\RedirectConditionsUserAgent\Tests\Factories\UserAgentFactory;
 
-/**
- * Class DeviceConditionTest
- *
- * @package Vdlp\RedirectConditionsUserAgent\Tests
- */
 class DeviceConditionTest extends PluginTestCase
 {
-    /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     */
     public function testTablet()
     {
         ConditionParameter::create([
@@ -33,7 +25,7 @@ class DeviceConditionTest extends PluginTestCase
             ]
         ]);
 
-        $rule = RedirectRuleFactory::createRedirectRule();
+        $rule = RedirectRuleFactory::testCreateRedirectRule();
 
         /** @var DeviceCondition $condition */
         $condition = resolve(DeviceCondition::class);
@@ -48,9 +40,6 @@ class DeviceConditionTest extends PluginTestCase
         self::assertFalse($condition->passes($rule, '/from/url'));
     }
 
-    /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     */
     public function testDesktop()
     {
         ConditionParameter::create([
@@ -64,7 +53,7 @@ class DeviceConditionTest extends PluginTestCase
             ]
         ]);
 
-        $rule = RedirectRuleFactory::createRedirectRule();
+        $rule = RedirectRuleFactory::testCreateRedirectRule();
 
         /** @var DeviceCondition $condition */
         $condition = resolve(DeviceCondition::class);
@@ -79,9 +68,6 @@ class DeviceConditionTest extends PluginTestCase
         self::assertTrue($condition->passes($rule, '/from/url'));
     }
 
-    /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     */
     public function testSmartPhone()
     {
         ConditionParameter::create([
@@ -95,7 +81,7 @@ class DeviceConditionTest extends PluginTestCase
             ]
         ]);
 
-        $rule = RedirectRuleFactory::createRedirectRule();
+        $rule = RedirectRuleFactory::testCreateRedirectRule();
 
         /** @var DeviceCondition $condition */
         $condition = resolve(DeviceCondition::class);
