@@ -10,55 +10,30 @@ use Vdlp\Redirect\Classes\RedirectRule;
 use Vdlp\RedirectConditions\Classes\Condition;
 use Vdlp\RedirectConditionsUserAgent\Traits\UserAgent;
 
-/**
- * Class DeviceCondition
- *
- * @package Vdlp\RedirectConditionsUserAgent\Classes
- */
 class DeviceCondition extends Condition
 {
     use UserAgent;
 
-    /**
-     * @var Request
-     */
-    private $request;
-
-    /**
-     * @param Request $request
-     */
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
+    public function __construct(
+        private Request $request
+    ) {
     }
 
-    /**
-     * @return string
-     */
     public function getCode(): string
     {
         return 'vdlp_device';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDescription(): string
     {
         return 'Device';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getExplanation(): string
     {
         return 'Specify for which device(s) this redirect rule applies.';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function passes(RedirectRule $rule, string $requestUri): bool
     {
         $parameters = $this->getParameters($rule->getId());
@@ -69,7 +44,7 @@ class DeviceCondition extends Condition
             return true;
         }
 
-        $detector = new DeviceDetector($this->userAgent ?? $this->request->userAgent());
+        $detector = new DeviceDetector((string) ($this->userAgent ?? $this->request->userAgent()));
         $detector->parse();
 
         if ($detector->isBot()) {
@@ -91,9 +66,6 @@ class DeviceCondition extends Condition
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFormConfig(): array
     {
         return [
@@ -106,9 +78,9 @@ class DeviceCondition extends Condition
                 'options' => [
                     'smartphone' => 'Smartphone',
                     'tablet' => 'Tablet',
-                    'desktop' => 'Desktop'
-                ]
-            ]
+                    'desktop' => 'Desktop',
+                ],
+            ],
         ];
     }
 }

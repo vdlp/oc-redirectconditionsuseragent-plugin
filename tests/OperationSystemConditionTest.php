@@ -10,16 +10,8 @@ use Vdlp\RedirectConditions\Models\ConditionParameter;
 use Vdlp\RedirectConditions\Tests\Factories\RedirectRuleFactory;
 use Vdlp\RedirectConditionsUserAgent\Classes\OperationSystemCondition;
 
-/**
- * Class OperationSystemConditionTest
- *
- * @package Vdlp\RedirectConditionsUserAgent\Tests
- */
 class OperationSystemConditionTest extends PluginTestCase
 {
-    /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     */
     public function testMac()
     {
         ConditionParameter::create([
@@ -33,7 +25,7 @@ class OperationSystemConditionTest extends PluginTestCase
             ]
         ]);
 
-        $rule = RedirectRuleFactory::createRedirectRule();
+        $rule = RedirectRuleFactory::testCreateRedirectRule();
 
         $userAgent = UserAgent::macPlatformToken();
 
@@ -49,9 +41,6 @@ class OperationSystemConditionTest extends PluginTestCase
         );
     }
 
-    /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     */
     public function testWindows()
     {
         ConditionParameter::create([
@@ -65,7 +54,7 @@ class OperationSystemConditionTest extends PluginTestCase
             ]
         ]);
 
-        $rule = RedirectRuleFactory::createRedirectRule();
+        $rule = RedirectRuleFactory::testCreateRedirectRule();
 
         $userAgent = UserAgent::windowsPlatformToken();
 
@@ -79,9 +68,6 @@ class OperationSystemConditionTest extends PluginTestCase
         );
     }
 
-    /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     */
     public function testLinux()
     {
         ConditionParameter::create([
@@ -94,7 +80,7 @@ class OperationSystemConditionTest extends PluginTestCase
             ]
         ]);
 
-        $rule = RedirectRuleFactory::createRedirectRule();
+        $rule = RedirectRuleFactory::testCreateRedirectRule();
 
         $userAgent = UserAgent::linuxPlatformToken();
 

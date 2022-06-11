@@ -10,26 +10,13 @@ use Vdlp\RedirectConditionsUserAgent\Classes\CrawlerCondition;
 use Vdlp\RedirectConditionsUserAgent\Classes\DeviceCondition;
 use Vdlp\RedirectConditionsUserAgent\Classes\OperationSystemCondition;
 
-/**
- * Class Plugin
- *
- * @package Vdlp\RedirectConditionUserAgent
- */
 class Plugin extends PluginBase
 {
-    /**
-     * {@inheritdoc}
-     */
     public $require = [
         'Vdlp.Redirect',
         'Vdlp.RedirectConditions',
     ];
 
-    /** @noinspection PhpMissingParentCallCommonInspection */
-
-    /**
-     * {@inheritdoc}
-     */
     public function pluginDetails(): array
     {
         return [
@@ -41,11 +28,6 @@ class Plugin extends PluginBase
         ];
     }
 
-    /** @noinspection PhpMissingParentCallCommonInspection */
-
-    /**
-     * {@inheritdoc}
-     */
     public function boot()
     {
         /** @var RedirectManagerInterface $manager */

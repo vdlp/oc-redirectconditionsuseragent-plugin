@@ -10,16 +10,8 @@ use Vdlp\RedirectConditions\Tests\Factories\RedirectRuleFactory;
 use Vdlp\RedirectConditionsUserAgent\Classes\CrawlerCondition;
 use Vdlp\RedirectConditionsUserAgent\Tests\Factories\UserAgentFactory;
 
-/**
- * Class CrawlerConditionTest
- *
- * @package Vdlp\RedirectConditionsUserAgent\Tests
- */
 class CrawlerConditionTest extends PluginTestCase
 {
-    /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     */
     public function testCrawler()
     {
         /** @var CrawlerCondition $condition */
@@ -36,7 +28,7 @@ class CrawlerConditionTest extends PluginTestCase
             ]
         ]);
 
-        $rule = RedirectRuleFactory::createRedirectRule();
+        $rule = RedirectRuleFactory::testCreateRedirectRule();
 
         $condition->setUserAgent(UserAgentFactory::getCrawler());
         self::assertTrue($condition->passes($rule, '/from/url'));
