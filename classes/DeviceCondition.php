@@ -15,7 +15,7 @@ class DeviceCondition extends Condition
     use UserAgent;
 
     public function __construct(
-        private Request $request
+        private Request $request,
     ) {
     }
 
@@ -26,12 +26,12 @@ class DeviceCondition extends Condition
 
     public function getDescription(): string
     {
-        return 'Device';
+        return 'vdlp.redirectconditionsuseragent::lang.device.description';
     }
 
     public function getExplanation(): string
     {
-        return 'Specify for which device(s) this redirect rule applies.';
+        return 'vdlp.redirectconditionsuseragent::lang.device.explanation';
     }
 
     public function passes(RedirectRule $rule, string $requestUri): bool
@@ -71,14 +71,14 @@ class DeviceCondition extends Condition
         return [
             'allowed_devices' => [
                 'tab' => self::TAB_NAME,
-                'label' => 'Device',
-                'comment' => 'Select nothing to ignore this condition.',
+                'label' => 'vdlp.redirectconditionsuseragent::lang.device.label',
+                'comment' => 'vdlp.redirectconditionsuseragent::lang.device.comment',
                 'type' => 'checkboxlist',
                 'span' => 'left',
                 'options' => [
-                    'smartphone' => 'Smartphone',
-                    'tablet' => 'Tablet',
-                    'desktop' => 'Desktop',
+                    'smartphone' => 'vdlp.redirectconditionsuseragent::lang.device.option_smartphone',
+                    'tablet' => 'vdlp.redirectconditionsuseragent::lang.device.option_tablet',
+                    'desktop' => 'vdlp.redirectconditionsuseragent::lang.device.option_desktop',
                 ],
             ],
         ];

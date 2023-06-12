@@ -11,12 +11,12 @@ use Vdlp\Redirect\Classes\RedirectRule;
 use Vdlp\RedirectConditions\Classes\Condition;
 use Vdlp\RedirectConditionsUserAgent\Traits\UserAgent;
 
-class OperationSystemCondition extends Condition
+class OperatingSystemCondition extends Condition
 {
     use UserAgent;
 
     public function __construct(
-        private Request $request
+        private Request $request,
     ) {
     }
 
@@ -27,12 +27,12 @@ class OperationSystemCondition extends Condition
 
     public function getDescription(): string
     {
-        return 'Operating system';
+        return 'vdlp.redirectconditionsuseragent::lang.os.description';
     }
 
     public function getExplanation(): string
     {
-        return 'Specify for which operation system(s) this redirect rule applies.';
+        return 'vdlp.redirectconditionsuseragent::lang.os.explanation';
     }
 
     public function passes(RedirectRule $rule, string $requestUri): bool
@@ -68,7 +68,7 @@ class OperationSystemCondition extends Condition
         return [
             'allowed_os_families' => [
                 'tab' => self::TAB_NAME,
-                'label' => 'Operation system family',
+                'label' => 'vdlp.redirectconditionsuseragent::lang.os.label',
                 'type' => 'checkboxlist',
                 'span' => 'left',
                 'options' => $options,
