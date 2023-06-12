@@ -8,7 +8,7 @@ use Faker\Provider\UserAgent;
 use PluginTestCase;
 use Vdlp\RedirectConditions\Models\ConditionParameter;
 use Vdlp\RedirectConditions\Tests\Factories\RedirectRuleFactory;
-use Vdlp\RedirectConditionsUserAgent\Classes\OperationSystemCondition;
+use Vdlp\RedirectConditionsUserAgent\Classes\OperatingSystemCondition;
 
 class OperationSystemConditionTest extends PluginTestCase
 {
@@ -29,8 +29,8 @@ class OperationSystemConditionTest extends PluginTestCase
 
         $userAgent = UserAgent::macPlatformToken();
 
-        /** @var OperationSystemCondition $condition */
-        $condition = resolve(OperationSystemCondition::class);
+        /** @var OperatingSystemCondition $condition */
+        $condition = resolve(OperatingSystemCondition::class);
         $condition->setUserAgent($userAgent);
 
         self::assertTrue($condition->passes($rule, '/from/url'));
@@ -58,8 +58,8 @@ class OperationSystemConditionTest extends PluginTestCase
 
         $userAgent = UserAgent::windowsPlatformToken();
 
-        /** @var OperationSystemCondition $condition */
-        $condition = resolve(OperationSystemCondition::class);
+        /** @var OperatingSystemCondition $condition */
+        $condition = resolve(OperatingSystemCondition::class);
         $condition->setUserAgent($userAgent);
 
         self::assertTrue(
@@ -84,8 +84,8 @@ class OperationSystemConditionTest extends PluginTestCase
 
         $userAgent = UserAgent::linuxPlatformToken();
 
-        /** @var OperationSystemCondition $condition */
-        $condition = resolve(OperationSystemCondition::class);
+        /** @var OperatingSystemCondition $condition */
+        $condition = resolve(OperatingSystemCondition::class);
         $condition->setUserAgent($userAgent);
 
         self::assertTrue(

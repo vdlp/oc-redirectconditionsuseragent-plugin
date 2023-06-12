@@ -15,7 +15,7 @@ class CrawlerCondition extends Condition
     use UserAgent;
 
     public function __construct(
-        private Request $request
+        private Request $request,
     ) {
     }
 
@@ -26,12 +26,12 @@ class CrawlerCondition extends Condition
 
     public function getDescription(): string
     {
-        return 'Crawler';
+        return 'vdlp.redirectconditionsuseragent::lang.crawler.description';
     }
 
     public function getExplanation(): string
     {
-        return 'A crawler is a program that systematically browses the World Wide Web in order to create an index of data. This condition allows you to redirect when a crawler is detected.';
+        return 'vdlp.redirectconditionsuseragent::lang.crawler.explanation';
     }
 
     public function passes(RedirectRule $rule, string $requestUri): bool
@@ -52,7 +52,7 @@ class CrawlerCondition extends Condition
         return [
             'crawler_only' => [
                 'tab' => self::TAB_NAME,
-                'label' => 'Match crawlers only',
+                'label' => 'vdlp.redirectconditionsuseragent::lang.crawler.label',
                 'type' => 'checkbox',
                 'span' => 'left',
             ],

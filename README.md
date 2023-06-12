@@ -27,7 +27,7 @@ Available device types to choose from:
 
 On a positive match the redirect will take place if the request came from a specific operating system.
 
-Available operation system families to choose from:
+Available operating system families to choose from:
 
 * Android
 * AmigaOS
@@ -55,7 +55,7 @@ Available operation system families to choose from:
 
 ## Unit tests
 
-To run the Unit Tests of this plugin, execute the following command from the project root: 
+To run the Unit Tests of this plugin, execute the following command from the project root:
 
 ```
 vendor/bin/phpunit plugins/vdlp/redirectconditionsuseragent
